@@ -8,6 +8,7 @@ import {HttpService} from '../services/http.service';
 
 import {AppComponent} from '../components/app.component';
 import {ConversationComponent} from '../components/conversation-component/conversation.component'
+import { LocalStorageService } from '../services/localstorage.service';
 
 const appRoutes: Routes = [
     {
@@ -31,7 +32,7 @@ const appRoutes: Routes = [
       RouterModule.forRoot(appRoutes),
       FormsModule
   ],
-  providers: [HttpService],
+  providers: [HttpService, LocalStorageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
