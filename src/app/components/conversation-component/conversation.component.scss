@@ -1,0 +1,22 @@
+.conversation {
+    padding: 1vw;
+    border: 1px red solid;
+    & .messages {
+        padding: 1vw;
+        height: 70vh;
+        border: 1px green solid;
+        & .message {
+            padding: 0.5vw;
+        }
+    }
+    & .form {
+        padding: 1vw;
+        border: 1px blue solid;
+        & .new-message-input {
+            width: 90%;
+        }
+        & .new-message-button {
+            width: 9%;
+        }
+    }
+}
