@@ -3,6 +3,7 @@ import {Router} from "@angular/router";
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 import {Dialog} from '../components/dialog-component/dialog.component';
 import {LocalStorageService} from '../services/localstorage.service';
+import { HttpService } from '../services/http.service';
 
 @Component({
     selector: 'app-root',
@@ -18,7 +19,8 @@ export class AppComponent implements OnInit {
 
     constructor(public dialog: MatDialog, 
         private _localStorageService: LocalStorageService, 
-        private _router: Router) {
+        private _router: Router,
+        private _httpService: HttpService) {
 
     }
 
@@ -42,16 +44,28 @@ export class AppComponent implements OnInit {
                 if (!result.name || !result.interest) {
                     this.openDialog();
                 }
-                // save user
                 console.log('Reg user');
+                this._httpService.addUser({name: result.name, interest: result.interest})
+                .subscribe((res) => {
+                    console.log('User added');
+                  },
+                  error => console.log(error)
+                );
                 this._localStorageService.setUser({name: result.name, interest: result.interest});
                 this._router.navigate(['conversation']);
             } else {
                 if (!result.name) {
                     this.openDialog();
                 }
-                // login user
                 console.log('Login user');
+                this._httpService.getUser(result.name)
+                .subscribe((res) => {
+                    console.log('Response', res);
+                    this._localStorageService.setUser({name: res.name, interest: res.interest});
+                    this._router.navigate(['conversation']);
+                  },
+                  error => console.log(error)
+                );
             }
         });
       }
