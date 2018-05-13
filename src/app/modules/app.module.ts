@@ -13,7 +13,9 @@ import {LocalStorageService} from '../services/localstorage.service';
 
 import {AppComponent} from '../components/app.component';
 import {ConversationComponent} from '../components/conversation-component/conversation.component'
-import {Dialog} from '../components/dialog-component/dialog.component';
+import {DialogComponent} from '../components/dialog-component/dialog.component';
+import { MessagesComponent } from '../components/messages-component/messages.component';
+import { UsersComponent } from '../components/users-component/users.component';
 
 const appRoutes: Routes = [
     {
@@ -30,10 +32,12 @@ const appRoutes: Routes = [
   declarations: [
       AppComponent,
       ConversationComponent,
-      Dialog,
+      DialogComponent,
+      MessagesComponent,
+      UsersComponent
   ],
   entryComponents: [
-    Dialog
+    DialogComponent
     ],
   imports: [
       BrowserModule,

@@ -6,10 +6,11 @@ import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
   templateUrl: 'dialog.component.html',
   styleUrls: ['./dialog.component.scss']
 })
-export class Dialog {
+
+export class DialogComponent {
 
   constructor(
-    public dialogRef: MatDialogRef<Dialog>,
+    public dialogRef: MatDialogRef<DialogComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any) { }
 
   onNoClick(): void {

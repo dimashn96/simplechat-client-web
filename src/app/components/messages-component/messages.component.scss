@@ -1,0 +1,22 @@
+.messages {
+        width: 70%;
+        padding: 1vw;
+        height: 70vh;
+        border: 1px green solid;
+        overflow-y: scroll;
+        & .message {
+            padding: 0.5vw;
+        }
+    }
+.form {
+    width: 70%;
+        padding: 1vw;
+        border: 1px blue solid;
+        & .new-message-input {
+            width: 90%;
+        }
+        & .new-message-button {
+            width: 9%;
+        }
+    }
+
