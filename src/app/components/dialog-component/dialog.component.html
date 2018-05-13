@@ -1,0 +1,25 @@
+<h1 mat-dialog-title>You should join the public chat.</h1>
+
+<div mat-dialog-content *ngIf="!data.newUser">
+  <p>Please insert your name to join!</p>
+  <mat-form-field>
+    <input matInput [(ngModel)]="data.name">
+  </mat-form-field>
+</div>
+
+<div mat-dialog-content *ngIf="data.newUser">
+    <p>Please insert your name and interest to register and join!</p>
+    <mat-form-field>
+      <input matInput [(ngModel)]="data.name">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput [(ngModel)]="data.interest">
+    </mat-form-field>
+  </div>
+
+<div mat-dialog-actions>
+  <button (click)="changeDialogTypeToReg()" *ngIf="!data.newUser">New user</button>
+  <button (click)="changeDialogTypeToLog()" *ngIf="data.newUser">Existing user</button>
+
+  <button mat-button [mat-dialog-close]="data" cdkFocusInitial>Ok</button>
+</div>
