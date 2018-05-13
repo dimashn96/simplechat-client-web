@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Router} from "@angular/router";
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
-import {DialogOverviewExampleDialog} from '../components/dialog-component/dialog.component';
+import {Dialog} from '../components/dialog-component/dialog.component';
 import {LocalStorageService} from '../services/localstorage.service';
 
 @Component({
@@ -31,7 +31,7 @@ export class AppComponent implements OnInit {
     }
 
     openDialog(): void {
-        let dialogRef = this.dialog.open(DialogOverviewExampleDialog, {
+        let dialogRef = this.dialog.open(Dialog, {
           width: '400px',
           height: '300px',
           data: { name: this.name, interest: this.interest, newUser: this.newUser }
