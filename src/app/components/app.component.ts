@@ -59,7 +59,7 @@ export class AppComponent implements OnInit {
                 }
                 console.log('Login user');
                 this._httpService.getUser(result.name)
-                .subscribe((res) => {
+                .subscribe((res: any) => {
                     console.log('Response', res);
                     this._localStorageService.setUser({name: res.name, interest: res.interest});
                     this._router.navigate(['conversation']);
@@ -70,4 +70,4 @@ export class AppComponent implements OnInit {
         });
       }
 
-}
+}  
