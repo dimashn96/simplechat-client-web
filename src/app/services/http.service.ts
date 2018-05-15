@@ -9,19 +9,19 @@ export class HttpService {
   }
 
   addUser(user) {
-    return this.http.put('https://simplechat-server.herokuapp.com/api/user', user);
+    return this.http.put('http://simplechat-server.cleverapps.io/api/user', user);
   }
 
   getUser(name) {
-    return this.http.get('https://simplechat-server.herokuapp.com/api/user/' + name);
+    return this.http.get('http://simplechat-server.cleverapps.io/api/user/' + name);
   }
 
   getMessages() {
-    return this.http.get('https://simplechat-server.herokuapp.com/api/messages/');
+    return this.http.get('http://simplechat-server.cleverapps.io/api/messages/');
   }
 
   getUsers() {
-    return this.http.get('https://simplechat-server.herokuapp.com/api/users/');
+    return this.http.get('http://simplechat-server.cleverapps.io/api/users/');
   }
 
 }
