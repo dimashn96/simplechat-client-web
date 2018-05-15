@@ -6,7 +6,7 @@
     "ng": "ng",
     "serve": "ng serve",
     "build": "ng build",
-    "postinstall": "ng build --aot -prod",
+    "postinstall": "ng build --aot --target=production",
     "start": "node server.js"
   },
   "engines": {
