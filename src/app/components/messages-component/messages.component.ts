@@ -13,7 +13,7 @@ export class MessagesComponent implements OnInit {
     public messages: any;
     public newMessageText = '';
 
-    private _socket = new WebSocket('ws://localhost:3001');
+    private _socket = new WebSocket('ws://simplechat-server.herokuapp.com');
     private _userName = this._localStorageService.getUserName();
 
     constructor(private _localStorageService: LocalStorageService,

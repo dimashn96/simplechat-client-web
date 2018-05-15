@@ -9,19 +9,19 @@ export class HttpService {
   }
 
   addUser(user) {
-    return this.http.put('http://localhost:3000/api/user', user);
+    return this.http.put('https://simplechat-server.herokuapp.com/api/user', user);
   }
 
   getUser(name) {
-    return this.http.get('http://localhost:3000/api/user/' + name);
+    return this.http.get('https://simplechat-server.herokuapp.com/api/user/' + name);
   }
 
   getMessages() {
-    return this.http.get('http://localhost:3000/api/messages/');
+    return this.http.get('https://simplechat-server.herokuapp.com/api/messages/');
   }
 
   getUsers() {
-    return this.http.get('http://localhost:3000/api/users/');
+    return this.http.get('https://simplechat-server.herokuapp.com/api/users/');
   }
 
 }
